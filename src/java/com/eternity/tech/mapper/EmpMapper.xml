@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+	
+<mapper namespace="com.eternity.tech.mapper.EmpMapper">
+	
+	 <!-- 查询数据库中是否有输入的用户名以及密码 -->
+	 <select id="selectUser">
+	 	select count(*) from emp where name = "#{username}" and password = "#{password}"
+	 </select>
+	
+	 <!-- 根据指定的name查询所有的此用户的所有数据 -->
+	 <select id="selectAll" resultType="emp">
+	 	select * from emp
+	 </select>
+	 
+	 <!-- 查询emp表中所有的姓名 -->
+	 <select id="selectAllName" resultType="String">
+	 	select name from emp
+	 </select>
+	 
+	 <!-- 根据输入的姓名查询emp表中是否存在此姓名，并且可能有相同的姓名，都查询出来（搜索框使用） -->
+	 <select id="selectName" resultType="String">
+	 	select name from emp where name = #{name}
+	 </select>
+	 
+	 <!-- 修改密码 -->
+	 <update id="updatepassword">
+	 	update emp set password = "#{newpass}" where name = "#{name}" and password = "#{oldpass}"
+	 </update>
+	 
+</mapper>

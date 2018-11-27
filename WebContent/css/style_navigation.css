@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+	body {
+		width: 1366px;
+		/* position: fixed; */
+	}
+	
+	
+	/*设置导航栏背景颜色*/
+	#container1,#container2 {
+		background-color: #F5FFFA;
+	}
+	
+	
+	/*第一个导航栏*/
+	
+	#container1 {
+		padding-top: 15px;
+		width: 1366px;
+		height: 80px;
+	}
+	#container11,#container12 {
+		/* display: inline;  */
+		 float: left; 
+	}
+	#container11 {	
+		width: 240px;
+		margin-left: 20px;
+		margin-top: 10px;
+	}
+	#container12 {
+		/* display: inline-block; */
+		margin-top: 16px;
+		margin-left: 890px;
+		/* padding-left: 950px; */
+	}
+	
+	
+	
+	/*第二个导航栏*/
+	#container2 {
+		width: 1366px;
+		height: 34px;
+		padding-bottom: 10px;
+	}
+	#container21,#container22 {
+		float: left;
+	}
+	#container21 {
+		margin-left: 20px;
+	}
+	#container22 {
+		margin-left: 766px;
+	}
+	
+	
+	
+	/*第三个div块*/
+	/* #container3 {
+		width: 1366px;
+		height: 24px;
+		margin-top: 40px;
+	}
+	#container31 {
+		float: left;
+		margin-left: 590px;
+	}
+	#container32 {
+		float: left;
+		margin-left:394px;
+	} */
+	

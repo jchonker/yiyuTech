@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+body {
+	height: auto;
+	overflow: scroll;
+}
+
+
+/*设置管理员主要内容部分样式*/
+#adminContent {
+	display: inline-block;
+	padding-left: 20px;
+	padding-top: 20px;
+	width: 1366px;
+}
+
+
+/*设置员工列表及搜索框样式*/
+#content1 {
+	float: left;
+	width: 260px;
+}
+
+	/*搜索框*/
+	#search {
+		height: 42px;
+		border: solid 1px blue;
+		margin:0 auto;
+		border-radius: 13px;
+	}
+
+
+		/*text输入框*/
+		input[type="text"] {
+			border: none;
+			float: left;
+			width: 200px;
+			margin-left: 10px;
+			height: 40px;
+			padding-left: 2px;
+		}
+		
+		
+		/*去掉点击input输入框时出现的默认蓝色边框*/
+		input:focus{ 
+			outline:none; 
+		}
+		
+		
+		
+		/*搜索图标,为了和引入的导航页面中的i图标的样式相区别，加一个id值*/
+		i#icon {
+			float: left;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+		
+	
+	h5 {
+		width: 260px;
+		height: 47px;
+		padding-top: 20px;
+		padding-left: 80px;
+		margin-top: 20px;
+	}
+	
+		
+	#list {
+		margin-top:20px;
+		text-align: center;
+		height: 429px;
+		/* border:1px red solid; */
+		overflow:scroll;
+	}
+		
+		
+
+/*设置员工信息样式*/
+#content2 {
+	width：auto;
+	float: left;
+	margin-left: 20px;
+}
+
+	#content21 {
+		width: auto;
+		padding-left: 344px;
+	}
+
+		#title,#action {
+			float: left;
+		}
+
+		#action {
+			margin-left: 232px;
+			margin-top: 4px;
+		}
+
+		
+		
+	#content22 {
+		width: 1034px;
+		height: 478px;
+		margin-top: 60px;
+	}
+		
+		#table_admin {
+			width: 1034px;
+			height: 478px;
+		}
+		
+		
+			#table_admin td {
+				/* width: 147px; */
+				text-align: center;
+				padding: none;            /*为了让td中的文本输入框的大小和td的大小一致，必须要设置此属性*/
+			}
+			
+			
+			/*匹配table下所有tr下的所有奇数位的td,并设置他们的样式*/
+			 .tr_admin td:nth-child(odd) {
+				font-size: 18px;
+				font-weight: bolder;
+				font-family: sans-serif;
+			}
+			
+			
+			/*文本输入框*/	
+			input {
+				width: 100%;
+				height: 100%;
+				border: none;
+				text-align: center;
+			}
+			
+			
+			#showAndUpload_admin {
+				width: 120px;
+			}

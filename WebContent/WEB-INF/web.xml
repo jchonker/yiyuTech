@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  <display-name>yiyuTech</display-name>
+  
+  	<!-- spring监听器最好配置在前端控制器前 -->
+    <!-- Spring监听器 -->  
+    <listener>  
+    	<description>启动spring容器</description>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>  
+    <!-- 指定spring的配置文件 -->
+ 	 <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>classpath:applicationContext.xml</param-value>  
+    </context-param>
+  
+  
+  
+  	<!-- 编码过滤器,解决中文乱码问题 -->  
+    <filter>  
+        <filter-name>encodingFilter</filter-name>  
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+        <!-- 作用是支持异步处理。如果web.xml是2.5，会报错。-->
+        <!-- <async-supported>true</async-supported>  --> 
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>UTF-8</param-value>  
+        </init-param>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>encodingFilter</filter-name>  
+        <!-- 拦截作用于所有请求 -->
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>
+      
+    
+  
+  
+    <!-- Spring MVC 核心控制器   前端控制器    作用：拦截所有的请求-->  
+    <servlet>  
+        <servlet-name>dispatcherServlet</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
+        <!-- 指定springmvc的配置文件 --> 
+        <init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:spring-mvc.xml</param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+         <!-- 作用是支持异步处理。如果web.xml是2.5，会报错。-->
+        <!-- <async-supported>true</async-supported>   -->
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>dispatcherServlet</servlet-name>  
+        <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->  
+        <url-pattern>*.do</url-pattern>  
+    </servlet-mapping> 
+  
+  
+  
+  
+    <!-- 防止Spring内存溢出监听器 -->  
+    <!-- <listener>  
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
+    </listener>  --> 
+  	
+  
+  	
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
